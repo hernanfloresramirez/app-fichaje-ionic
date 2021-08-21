@@ -1,0 +1,95 @@
+<ion-header no-border class="ion-text-center">
+  <ion-toolbar color="danger">
+    <ion-title><b>CONFIRMACIÓN DE RESERVA</b></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <div><b>N°:</b> {{ no }}</div>
+      </ion-col>
+      <ion-col size="6">
+        <div><b>MEDICO:</b> {{ nombmed.Usuario.nuser}}</div>
+      </ion-col>
+      <ion-col size="3">
+        <div><b>ESPECIALIDAD:</b> {{ nombmed.obs}}</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="8">
+        <div><b>PACIENTE:</b> {{ nombpac.nombres | uppercase}}</div>
+      </ion-col>
+      <ion-col size="4">
+        <div><b>TEL/CEL:</b> {{ nombpac.tel_dom }}</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <div><b>DIRECCIÓN:</b> {{nombpac.direccion}}</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <div><b>INSTITUCIÓN:</b> {{ nombpac.Institucion.des_inst | json }}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid-->
+
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="3">
+          <div><b>N°:</b> {{ no }}</div>
+        </ion-col>
+        <ion-col size="6">
+          <div><b>MEDICO:</b>  {{nombmed.Usuario.nuser}}</div>
+        </ion-col>
+        <ion-col size="3">
+          <div><b>ESPECIALIDAD:</b> {{ nombmed.obs}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="8">
+          <div><b>PACIENTE:</b> {{ nombpac.nombres | uppercase}}</div>
+        </ion-col>
+        <ion-col size="4">
+          <div><b>TEL/CEL:</b> {{ nombpac.tel_dom }}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div><b>DIRECCIÓN:</b> {{nombpac.direccion}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div><b>INSTITUCIÓN:</b> {{ nombpac.Institucion.des_inst }}</div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <ion-button 
+    expand="full"
+    shape="round"
+    color="navy"
+    (click)="confirm()">CONFIRMAR</ion-button>
+  <ion-button 
+    expand="full"
+    shape="round"
+    color="crimson"
+    (click)="salir()">SALIR</ion-button>
+</ion-content>

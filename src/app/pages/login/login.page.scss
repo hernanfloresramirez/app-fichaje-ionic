@@ -1,0 +1,29 @@
+ion-content {
+    
+    #header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 125px;
+            height: 125px;
+            border-radius: 13%;
+            border: 4px;
+        }
+    }
+    form {
+        ion-item {
+            background-color: #efffff;
+            border-radius: 35px;
+        }
+        ion-button {
+            text-transform: initial;
+            border-radius: 50px;
+            --background-color: navy;
+        }
+        ion-input {
+            border-radius: 35px;
+            box-shadow: 0px 2px 2px 0px gray;
+        }
+    }
+}

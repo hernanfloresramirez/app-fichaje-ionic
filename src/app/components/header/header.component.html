@@ -1,0 +1,17 @@
+<ion-header translucent>
+  <ion-toolbar color="navy">
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+      <ion-menu-button menu="main">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-menu-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-fab-button (click)="onLogout()" size="small" slot="end" color="danger">
+      <ion-icon shape="round" name="power"></ion-icon>
+    </ion-fab-button>
+    <ion-title text-capitalize>{{ titulo }}</ion-title>
+  </ion-toolbar>
+</ion-header>

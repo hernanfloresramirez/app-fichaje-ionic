@@ -1,0 +1,21 @@
+<app-header titulo="ÁREAS DE CONSULTA EXTERNA"></app-header>>
+<app-menu></app-menu>
+<ion-content [fullscreen]="true">
+  Bienvenido a su APP: {{currentUser | uppercase}}
+  <br>
+  <h4>N° Total de especialidades disponibles {{ nroareas }}.</h4>
+  <h6>Dispositivos conectados -{{ totdisp }}-.</h6>
+  <ion-card class="ion-text-center" shape="round" *ngFor="let item of areas">
+    <ion-button expand="full" color="crimson" shape="round"
+      [routerLink]="['../detaillarea/',item.tipo,item.area]">
+      <b>{{item.obs}}</b>
+    </ion-button>
+  </ion-card>
+</ion-content>
+<ion-footer no-border transparent>
+  <ion-toolbar color="crimson">
+    &nbsp;
+    <ion-icon name="medical"></ion-icon>
+    Seguro Social Universitario Potosí
+  </ion-toolbar>
+</ion-footer>

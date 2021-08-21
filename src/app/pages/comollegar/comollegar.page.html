@@ -1,0 +1,47 @@
+<app-header titulo="Como llegar"></app-header>
+<app-menu></app-menu>
+<ion-content>
+    
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div>
+                <ion-button
+                    shape="round"
+                    color="danger" 
+                    expand="block"
+                    (click)='calculateRoute("WALKING")'>A Pie</ion-button>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+                <ion-button
+                    shape="round"
+                    color="danger" 
+                    expand="block"
+                    (click)="calculateRoute('BICYCLING')">En Bicicleta</ion-button>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+                <ion-button
+                    shape="round"
+                    color="danger" 
+                    expand="block"
+                    (click)="calculateRoute('DRIVING')">En Automovil</ion-button>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+                <ion-button
+                    shape="round"
+                    color="danger" 
+                    expand="block"
+                    (click)="calculateRoute('TRANSIT')">Transito</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+  <div id="map"></div>
+  <div id="indicators"></div>
+</ion-content>

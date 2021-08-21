@@ -1,0 +1,48 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="danger">
+    <ion-title><b>AUTENTIFICACIÓN</b></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div id="header">
+    <h1><b>INGRESE SUS DATOS</b></h1>
+      <img src="../../../assets/images/logo.png" />
+  </div>
+  <form id="form" [formGroup]="formGroups">
+    <ion-item>
+      <ion-label 
+      position="floating">
+        <b>USUARIO</b>
+      </ion-label>
+      <ion-input 
+        formControlName="cod_pers"
+        type="number"
+        shape="round"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label 
+      position="floating">
+        <b>CONTRASEÑA</b>
+      </ion-label>
+      <ion-input 
+        formControlName="nro_id"
+        type="password"
+        shape="round"></ion-input>
+    </ion-item>
+    <ion-button
+      shape="round"
+      color="navy"
+      fill="outline"
+      expand="block"
+      (click)="login()"
+      [disabled]="formGroups.invalid"><b>INGRESAR</b>
+    </ion-button>
+  </form>
+</ion-content>
+<ion-footer no-border transparent>
+  <ion-toolbar color="dark">
+    &nbsp;
+    <ion-icon name="medical"></ion-icon>
+    Institución: Seguro Socil Universitario Potosí
+  </ion-toolbar>
+</ion-footer>

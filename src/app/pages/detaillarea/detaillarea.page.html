@@ -1,0 +1,62 @@
+<app-header titulo="{{ descarea }}"></app-header>
+<app-menu></app-menu>
+<ion-content fullscreen>
+  <ion-card class="ion-text-center" *ngFor="let item of horarios; let i=index">
+    <ion-card-header>
+      <ion-row>
+        <ion-col size="3">
+          <ion-avatar class="center">
+            <img src="../../../assets/images/avatars/img_avatar{{item.Usuario.cod_med}}.ico" />
+          </ion-avatar>
+        </ion-col>
+        <ion-col>
+          <ion-card-title class="ion-text-uppercase">{{item.Usuario.Usuario.nuser}}</ion-card-title>
+          <ion-card-subtitle>{{item.Usuario.obs}}</ion-card-subtitle>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-item color="success">
+      <ion-icon name="pulse-outline"></ion-icon>&nbsp;
+      <b>{{item.Usuario.Usuario.cod_med}}.- {{item.Usuario.Usuario.nombre}}</b>
+    </ion-item>
+    <ion-list *ngFor="let itemfichs of item.horaficha;let indice=index">
+      <ion-label>
+        <ion-button *ngIf="itemfichs.estado=='1'" 
+          shape="round" button color="success" 
+          expand="block" 
+          fill="outline"
+          (click)="presentModal(
+              indice + 1,
+              item.Usuario,
+              itemfichs.codcon,
+              itemfichs.periodo,
+              itemfichs.hora,
+              itemfichs.tipo,
+              itemfichs.area,
+              itemfichs)">
+          <ion-icon name="walk" slot="start"></ion-icon>
+          N° {{ indice + 1 }}) {{ itemfichs.hora | date: "hh:mm" }}
+          {{itemfichs.fechapres|date:'hh:mm:ss'}}
+        </ion-button>
+        <ion-button *ngIf="itemfichs.estado=='0'" 
+          shape="round"
+          color="danger"
+          expand="block">
+          <ion-icon name="walk" slot="start"></ion-icon>
+          N° {{ indice + 1 }}) {{ itemfichs.hora | date: "hh:mm" }}
+        </ion-button>
+      </ion-label>
+    </ion-list>
+  </ion-card>
+</ion-content>
+<ion-footer no-border transparent>
+  <ion-toolbar>
+    <b>
+      &nbsp;
+        <ion-icon name="pulse"></ion-icon>
+      &nbsp;
+      S.S.U.Potosí
+    </b>
+    ©hernanfloresramirez1987@gmail.com (2021)
+  </ion-toolbar>
+</ion-footer>
